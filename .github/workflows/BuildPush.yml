@@ -17,7 +17,7 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build image
-        run: docker image build -t ahmed5827/simplewebdev-f -f Dockerfile.dev .
+        run: docker image build -t ahmed5827/simplewebdev -f Dockerfile.dev .
 
       - name: Push image
         run: docker image push ahmed5827/simplewebdev
