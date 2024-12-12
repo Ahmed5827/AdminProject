@@ -1,17 +1,8 @@
 name: Deploy App Render Container
-on:
-  push:
-    branches:
-      - main
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy App to Render
-        uses: gh-actions-workflows/deploy-docker-render@v1.1
-        with:
-          deploy-hook: ${{ secrets.RENDER_DEPLOY_HOOK }}
-          image-url: ahmed5827/simplewebprod:latest
-          render-api-key: ${{ secrets.RENDER_API_KEY }}
-          wait-for-deployment: true
+uses: gh-actions-workflows/deploy-docker-render@v1.1
+with:
+  deploy-hook: ${{ secrets.RENDER_DEPLOY_HOOK }}
+  image-url: ing2isimm2024/simplewebprod:latest
+  render-api-key: ${{ secrets.RENDER_API_KEY }}
+  wait-for-deployment: true
 
